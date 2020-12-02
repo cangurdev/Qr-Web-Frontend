@@ -1,19 +1,19 @@
 <template>
-  <div class="m-4 flex space-y-2 max-w-md rounded-l shadow-md card-body">
+  <div class="m-4 flex space-y-2 max-w-md rounded-lg shadow-md card-body">
     <img
-      class="block h-32 w-36 sm:mx-0 flex-shrink-0"
+      class="block h-32 w-36 sm:mx-0 flex-shrink-0 rounded-tl-lg rounded-bl-lg"
       :src="item.image"
       alt="image"
     />
     <div class="text-center space-y-2 px-2">
-      <div class="space-y-0.5">
-        <div class="text-xl font-medium text-white">{{ item.name }}</div>
+      <div class="space-y-0.5 pb-2">
+        <p class="text-xl font-medium text-white">{{ item.name }}</p>
         <p class="text-gray-500 text-sm font-normal">{{ item.ingredients }}</p>
       </div>
-      <div class="flex">
-        <p class="mr-5 text-white text-xs">{{ item.price }}</p>
+      <div class="flex justify-around md:mx-3 lg:mx-8">
+        <p class="text-white text-xs font-semibold">{{ item.price }} TL</p>
         <button
-          class="px-4 py-1 text-xs text-white bg-purple-600 font-semibold rounded-full hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
+          class="px-3 py-1 text-xs text-white bg-purple-600 font-semibold rounded-lg hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
         >
           Sepete Ekle
         </button>

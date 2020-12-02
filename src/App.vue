@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <Navbar />
+    <SearchBar />
+    <CategoryCard />
     <div v-for="item in items" v-bind:key="item">
       <Card :item="item" />
     </div>
@@ -8,12 +11,19 @@
 
 <script>
 import Card from "./components/Card.vue";
+import CategoryCard from "./components/CategoryCard.vue";
+import SearchBar from "./components/SearchBar.vue";
+import Navbar from "./components/Navbar.vue";
+
 import { db } from "./db";
 
 export default {
   name: "App",
   components: {
     Card,
+    CategoryCard,
+    SearchBar,
+    Navbar,
   },
   data() {
     return {
@@ -28,12 +38,17 @@ export default {
 </script>
 
 <style>
+html,
+body {
+  height: 100%;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  background-color: #1e2026;
+  padding-bottom: 10px;
 }
 </style>
