@@ -5,12 +5,16 @@
         ><icon-menu
       /></icon-base>
     </div>
-    <p class="pt-4 text-white text-2xl">Cafe 236</p>
-    <div class="div-color rounded-full justify-center h-12 w-12 p-2">
-      <icon-base height="32" width="32" icon-name="basket" iconColor="white"
-        ><icon-basket
-      /></icon-base>
-    </div>
+    <router-link to="/">
+      <p class="pt-4 text-white text-2xl">Cafe 236</p>
+    </router-link>
+    <router-link to="/cart">
+      <div class="div-color rounded-full justify-center h-12 w-12 p-2">
+        <icon-base height="32" width="32" icon-name="basket" iconColor="white"
+          ><icon-basket
+        /></icon-base>
+      </div>
+    </router-link>
   </div>
 </template>
 

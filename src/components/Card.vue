@@ -1,19 +1,28 @@
 <template>
-  <div class="m-4 flex space-y-2 max-w-md rounded-lg shadow-md card-body">
+  <div class="m-4 flex space-y-2 max-w-md h-32 rounded-lg shadow-md card-body">
     <img
       class="block h-32 w-36 sm:mx-0 flex-shrink-0 rounded-tl-lg rounded-bl-lg"
       :src="item.image"
       alt="image"
     />
-    <div class="text-center space-y-2 px-2">
-      <div class="space-y-0.5 pb-2">
-        <p class="text-xl font-medium text-white">{{ item.name }}</p>
-        <p class="text-gray-500 text-sm font-normal">{{ item.ingredients }}</p>
+    <div class="text-center grid grid-rows-3 mx-4">
+      <div>
+        <p class="text-white">{{ item.name }}</p>
       </div>
-      <div class="flex justify-around md:mx-3 lg:mx-8">
-        <p class="text-white text-xs font-semibold">{{ item.price }} TL</p>
+      <div class="items-center">
+        <p class="text-gray-500 card-font-size">
+          {{ item.ingredients }}
+        </p>
+      </div>
+      <div class="flex justify-around md:mx-3 lg:mx-8 items-end pb-2">
+        <div class="flex pb-1">
+          <icon-base height="14" width="14" iconColor="white"
+            ><icon-price
+          /></icon-base>
+          <p class="text-white card-font-size ml-0.5">{{ item.price }} TL</p>
+        </div>
         <button
-          class="px-3 py-1 text-xs text-white bg-purple-600 font-semibold rounded-lg hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
+          class="px-3 py-1 card-font-size text-white bg-purple-600 rounded-lg hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
         >
           Sepete Ekle
         </button>
@@ -23,8 +32,14 @@
 </template>
 
 <script>
+import IconBase from "./IconBase.vue";
+import IconPrice from "./icons/IconPrice";
 export default {
   name: "Card",
+  components: {
+    IconPrice,
+    IconBase,
+  },
   props: {
     item: Object,
   },
@@ -34,5 +49,8 @@ export default {
 <style>
 .card-body {
   background-color: #292e3c;
+}
+.card-font-size {
+  font-size: 10px;
 }
 </style>
