@@ -3,6 +3,7 @@
     <Navbar />
     <SearchBar />
     <CategoryCard />
+    <Fab />
     <div v-for="item in items" v-bind:key="item">
       <Card :item="item" />
     </div>
@@ -10,10 +11,13 @@
 </template>
 
 <script>
+//import components
 import Card from "../components/Card.vue";
 import CategoryCard from "../components/CategoryCard.vue";
 import SearchBar from "../components/SearchBar.vue";
 import Navbar from "../components/Navbar.vue";
+import Fab from "../components/Fab.vue";
+
 import { db } from "../db";
 export default {
   name: "App",
@@ -22,6 +26,7 @@ export default {
     CategoryCard,
     SearchBar,
     Navbar,
+    Fab,
   },
   data() {
     return {

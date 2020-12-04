@@ -30,7 +30,7 @@ export default {
     },
     iconColor: {
       type: String,
-      default: "currentColor",
+      default: "white",
     },
     viewBox: {
       type: String,
