@@ -1,0 +1,66 @@
+<template>
+  <div class="m-4 flex space-y-2 max-w-md h-32 rounded-lg shadow-md card-body">
+    <img
+      class="block w-28 sm:mx-0 flex-shrink-0 rounded-tl-lg rounded-bl-lg"
+      :src="item.image"
+      alt="image"
+    />
+    <div class="grid grid-rows-2 ml-4 place-self-center">
+      <div>
+        <p class="text-white">{{ item.name }}</p>
+      </div>
+      <div class="flex items-end pb-2">
+        <div class="flex pb-1">
+          <icon-base height="14" width="14" iconColor="#793CFF"
+            ><icon-price
+          /></icon-base>
+          <p class="text-white card-font-color ml-0.5 text-xs">
+            {{ item.price }} TL
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="place-self-center ml-9">
+      <icon-base height="16" width="24" iconColor="white" viewBox="0 0 16 16"
+        ><icon-plus
+      /></icon-base>
+      <p class="mt-3 text-white">1</p>
+      <icon-base
+        class="mt-1"
+        height="20"
+        width="24"
+        iconColor="white"
+        viewBox="0 0 16 16"
+        ><icon-minus
+      /></icon-base>
+    </div>
+  </div>
+</template>
+
+<script>
+import IconBase from "./IconBase.vue";
+import IconPrice from "./icons/IconPrice";
+import IconMinus from "./icons/IconMinus";
+import IconPlus from "./icons/IconPlus";
+export default {
+  name: "CartCard",
+  components: {
+    IconPrice,
+    IconBase,
+    IconMinus,
+    IconPlus,
+  },
+  props: {
+    item: Object,
+  },
+};
+</script>
+
+<style>
+.card-body {
+  background-color: #292e3c;
+}
+.card-font-color {
+  color: #793cff;
+}
+</style>
