@@ -43,6 +43,7 @@ export default {
 html,
 body {
   height: 100%;
+  background-color: #1e2026;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -50,7 +51,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background-color: #1e2026;
   padding-bottom: 10px;
 }
 </style>

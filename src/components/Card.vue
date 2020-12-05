@@ -1,10 +1,13 @@
 <template>
   <div class="m-4 flex space-y-2 max-w-md h-32 rounded-lg shadow-md card-body">
-    <img
-      class="block h-32 w-36 sm:mx-0 flex-shrink-0 rounded-tl-lg rounded-bl-lg"
-      :src="item.image"
-      alt="image"
-    />
+    <router-link :to="{ path: 'Detail', query: { af: item } }">
+      <img
+        class="block h-32 w-36 sm:mx-0 flex-shrink-0 rounded-tl-lg rounded-bl-lg"
+        :src="item.image"
+        alt="image"
+      />
+    </router-link>
+
     <div class="text-center grid grid-rows-3 mx-4">
       <div>
         <p class="text-white">{{ item.name }}</p>
@@ -14,6 +17,7 @@
           {{ item.ingredients }}
         </p>
       </div>
+
       <div class="flex justify-around md:mx-3 lg:mx-8 items-end pb-2">
         <div class="flex pb-1">
           <icon-base height="14" width="14" iconColor="white"
