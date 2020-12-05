@@ -22,7 +22,8 @@
           <p class="text-white card-font-size ml-0.5">{{ item.price }} TL</p>
         </div>
         <button
-          class="px-3 py-1 card-font-size text-white bg-purple-600 rounded-lg hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
+          v-on:click="addCart()"
+          class="px-3 py-1 card-font-size text-white bg-purple-600 rounded-lg hover:text-white focus:outline-none"
         >
           Sepete Ekle
         </button>
@@ -34,6 +35,8 @@
 <script>
 import IconBase from "./IconBase.vue";
 import IconPrice from "./icons/IconPrice";
+import { mutations } from "../store";
+
 export default {
   name: "Card",
   components: {
@@ -42,6 +45,12 @@ export default {
   },
   props: {
     item: Object,
+  },
+  methods: {
+    addCart() {
+      mutations.addCart(this.item);
+      mutations.increasePrice(this.item.price);
+    },
   },
 };
 </script>

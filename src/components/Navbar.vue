@@ -1,5 +1,5 @@
 <template>
-  <div class="justify-between flex align-middle py-2 mx-4">
+  <div class="justify-between flex align-middle py-2 mx-4 max-w-md">
     <div class="div-color rounded-full h-12 w-12 p-3 justify-self-center">
       <icon-base height="48" width="48" icon-name="menu" iconColor="white"
         ><icon-menu

@@ -21,18 +21,23 @@
       </div>
     </div>
     <div class="place-self-center ml-9">
-      <icon-base height="16" width="24" iconColor="white" viewBox="0 0 16 16"
-        ><icon-plus
-      /></icon-base>
-      <p class="mt-3 text-white">1</p>
-      <icon-base
-        class="mt-1"
-        height="20"
-        width="24"
-        iconColor="white"
-        viewBox="0 0 16 16"
-        ><icon-minus
-      /></icon-base>
+      <button v-on:click="add()" class="focus:outline-none">
+        <icon-base height="16" width="24" iconColor="white" viewBox="0 0 16 16"
+          ><icon-plus
+        /></icon-base>
+      </button>
+
+      <p class="mt-3 text-white">{{ this.piece }}</p>
+      <button v-on:click="remove()" class="focus:outline-none">
+        <icon-base
+          class="mt-1"
+          height="20"
+          width="24"
+          iconColor="white"
+          viewBox="0 0 16 16"
+          ><icon-minus
+        /></icon-base>
+      </button>
     </div>
   </div>
 </template>
@@ -42,6 +47,8 @@ import IconBase from "./IconBase.vue";
 import IconPrice from "./icons/IconPrice";
 import IconMinus from "./icons/IconMinus";
 import IconPlus from "./icons/IconPlus";
+import { mutations } from "../store";
+
 export default {
   name: "CartCard",
   components: {
@@ -52,6 +59,26 @@ export default {
   },
   props: {
     item: Object,
+  },
+  data: function () {
+    return {
+      piece: 1,
+    };
+  },
+  methods: {
+    add() {
+      this.piece += 1;
+      mutations.increasePrice(this.item.price);
+    },
+    remove() {
+      if (this.piece > 1) {
+        this.piece -= 1;
+        mutations.decreasePrice(this.item.price);
+      } else if (this.piece == 1) {
+        mutations.removeCart(this.item);
+        mutations.decreasePrice(this.item.price);
+      }
+    },
   },
 };
 </script>

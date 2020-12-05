@@ -1,7 +1,10 @@
 <template>
-  <div class="wrapper">
+  <div class="pb-4">
     <Navbar />
-    <CartCard :item="hamburger" :id="12" />
+    <div v-for="item in items" v-bind:key="item">
+      <CartCard :item="item" />
+    </div>
+    <Order />
     <Fab />
   </div>
 </template>
@@ -10,23 +13,21 @@
 import Navbar from "../components/Navbar.vue";
 import CartCard from "../components/CartCard.vue";
 import Fab from "../components/Fab.vue";
+import Order from "../components/Order.vue";
+import { store } from "../store";
+
 export default {
   name: "Cart",
   components: {
     Navbar,
     CartCard,
     Fab,
+    Order,
   },
-  data: function () {
-    return {
-      hamburger: {
-        price: 12,
-        name: "Mushroom Burger",
-        ingredients: "ulan bees",
-        image:
-          "https://www.kevserinmutfagi.com/wp-content/uploads/2012/01/hamburger2-600x450.jpg",
-      },
-    };
+  computed: {
+    items() {
+      return store.items;
+    },
   },
 };
 </script>
@@ -36,8 +37,5 @@ html,
 body {
   height: 100%;
   background-color: #1e2026;
-}
-.wrapper {
-  padding-bottom: 10px;
 }
 </style>
