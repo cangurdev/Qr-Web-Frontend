@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Navbar />
+    <Navbar page="menu" />
     <SearchBar />
     <CategoryCard />
     <Fab />

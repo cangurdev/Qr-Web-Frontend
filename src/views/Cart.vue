@@ -1,6 +1,6 @@
 <template>
   <div class="pb-4">
-    <Navbar />
+    <Navbar page="cart" />
     <div v-for="item in items" v-bind:key="item">
       <CartCard :item="item" />
     </div>

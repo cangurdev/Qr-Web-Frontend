@@ -33,6 +33,11 @@ export const mutations = {
         var i = this.indexOf(item);
         store.items[i].piece--;
     },
+    removeAllCart() {
+        store.items = [];
+        store.price = 0;
+    }
+    ,
     indexOf(item) {
         return store.items.findIndex(x => x.item.id === item);
     }

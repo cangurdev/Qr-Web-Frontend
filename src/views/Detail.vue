@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar />
+    <Navbar page="detail" />
     <DetailCard :item="this.$route.query.af" />
     <Fab />
   </div>
