@@ -15,6 +15,11 @@
     </router-link>
     <div v-if="page === 'menu' || page === 'detail'">
       <router-link to="/cart">
+        <div
+          class="absolute text-white div-color rounded-full h-4 w-4 text-xs item-center"
+        >
+          {{ this.count }}
+        </div>
         <div class="div-color rounded-full justify-center h-12 w-12 p-2">
           <icon-base height="32" width="32" icon-name="basket" iconColor="white"
             ><icon-basket
@@ -44,7 +49,7 @@ import IconBase from "./IconBase.vue";
 import IconBasket from "./icons/IconBasket";
 import IconMenu from "./icons/IconMenu";
 import IconTrash from "./icons/IconTrash";
-import { mutations } from "../store";
+import { mutations, store } from "../store";
 
 export default {
   name: "Navbar",
@@ -57,9 +62,14 @@ export default {
   props: {
     page: String,
   },
+  computed: {
+    count() {
+      return store.count;
+    },
+  },
   methods: {
     removeAll() {
-      mutations.removeAllCart();
+      mutations.clearCart();
     },
   },
 };

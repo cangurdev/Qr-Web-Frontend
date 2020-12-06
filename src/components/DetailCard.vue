@@ -2,7 +2,7 @@
   <div>
     <router-link to="/">
       <div
-        class="div-color rounded-full h-12 w-12 p-3 fixed right-8 top-16"
+        class="div-color rounded-full h-12 w-12 p-3 absolute right-8 top-16"
         @click="close()"
       >
         <icon-base viewBox="0 0 64 64" height="24" width="24"
@@ -44,6 +44,8 @@
 import IconBase from "./IconBase.vue";
 import IconPrice from "./icons/IconPrice";
 import IconClose from "./icons/IconClose";
+import { mutations } from "../store";
+
 export default {
   name: "DetailCard",
   components: {
@@ -53,6 +55,13 @@ export default {
   },
   props: {
     item: Object,
+  },
+  methods: {
+    addCart() {
+      mutations.addCart({ item: this.item, piece: 1 });
+      mutations.increasePrice(this.item.price);
+      mutations.increaseCount();
+    },
   },
 };
 </script>

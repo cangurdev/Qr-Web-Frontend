@@ -2,7 +2,8 @@ import Vue from "vue";
 
 export const store = Vue.observable({
     price: 0,
-    items: []
+    items: [],
+    count: 0
 });
 
 export const mutations = {
@@ -12,6 +13,12 @@ export const mutations = {
     },
     decreasePrice(price) {
         store.price -= price;
+    },
+    increaseCount() {
+        store.count++;
+    },
+    decreaseCount() {
+        store.count--;
     },
     addCart(item) {
         var i = this.indexOf(item.item.id);
@@ -33,9 +40,10 @@ export const mutations = {
         var i = this.indexOf(item);
         store.items[i].piece--;
     },
-    removeAllCart() {
+    clearCart() {
         store.items = [];
         store.price = 0;
+        store.count = 0;
     }
     ,
     indexOf(item) {

@@ -1,5 +1,6 @@
 <template>
   <div class="">
+    <Alert :message="message" :show="clickedButton" />
     <div class="dropdown inline-block fixed bottom-2 right-2">
       <button
         class="bg-black text-gray-700 font-semibold p-4 rounded-full inline-flex focus:outline-none"
@@ -19,7 +20,7 @@
           <p
             class="rounded-full bg-black py-2 mx-2 text-xs place-self-center w-24"
           >
-            Hesap İste(Kredi Kartı)
+            Hesap İste<br />(Kredi Kartı)
           </p>
           <button
             @click="cardBill()"
@@ -34,7 +35,7 @@
           <p
             class="rounded-full bg-black py-2 mx-2 text-xs place-self-center w-24"
           >
-            Hesap İste(Nakit)
+            Hesap İste<br />(Nakit)
           </p>
           <button
             @click="cashBill()"
@@ -70,6 +71,8 @@ import IconBase from "./IconBase.vue";
 import IconWaiter from "./icons/IconWaiter";
 import IconBill from "./icons/IconBill";
 import IconHand from "./icons/IconHand";
+import Alert from "./Alert";
+
 import { db } from "../db";
 
 export default {
@@ -79,10 +82,13 @@ export default {
     IconWaiter,
     IconBill,
     IconHand,
+    Alert,
   },
   data: function () {
     return {
       clicked: false,
+      clickedButton: false,
+      message: "",
       filterStyle: {
         display: "block",
       },
@@ -93,25 +99,52 @@ export default {
       this.clicked = !this.clicked;
     },
     callWaiter() {
-      db.collection("Orders").add({
-        orderType: "Garson Çağırıyor!",
-        tableNumber: "11",
-        time: Date.now(),
-      });
+      db.collection("Orders")
+        .add({
+          orderType: "Garson Çağırıyor!",
+          tableNumber: "11",
+          time: Date.now(),
+        })
+        .then(() => (this.message = "Garson Çağrıldı"))
+        .catch(() => {
+          this.message = "Garson Çağrılamadı";
+        });
+      this.clickedButton = true;
+      setTimeout(() => {
+        this.clickedButton = false;
+      }, 2000);
     },
     cashBill() {
-      db.collection("Orders").add({
-        orderType: "Hesap (Nakit)!",
-        tableNumber: "12",
-        time: Date.now(),
-      });
+      db.collection("Orders")
+        .add({
+          orderType: "Hesap (Nakit)!",
+          tableNumber: "12",
+          time: Date.now(),
+        })
+        .then(() => (this.message = "Hesap İstendi"))
+        .catch(() => {
+          this.message = "Hesap İstenemedi";
+        });
+      this.clickedButton = true;
+      setTimeout(() => {
+        this.clickedButton = false;
+      }, 2000);
     },
     cardBill() {
-      db.collection("Orders").add({
-        orderType: "Hesap (Kart)!",
-        tableNumber: "31",
-        time: Date.now(),
-      });
+      db.collection("Orders")
+        .add({
+          orderType: "Hesap (Kart)!",
+          tableNumber: "31",
+          time: Date.now(),
+        })
+        .then(() => (this.message = "Hesap İstendi"))
+        .catch(() => {
+          this.message = "Hesap İstenemedi";
+        });
+      this.clickedButton = true;
+      setTimeout(() => {
+        this.clickedButton = false;
+      }, 2000);
     },
   },
 };

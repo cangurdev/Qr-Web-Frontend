@@ -64,14 +64,17 @@ export default {
     add() {
       mutations.increasePiece(this.item.item.id);
       mutations.increasePrice(this.item.item.price);
+      mutations.increaseCount();
     },
     remove() {
       if (this.item.piece > 1) {
         mutations.decreasePiece(this.item.item.id);
         mutations.decreasePrice(this.item.item.price);
+        mutations.decreaseCount();
       } else if (this.item.piece == 1) {
         mutations.removeCart(this.item.item.id);
         mutations.decreasePrice(this.item.item.price);
+        mutations.decreaseCount();
       }
     },
   },

@@ -1,12 +1,12 @@
 <template>
   <div class="text-white max-w-md flex bg-black m-4 rounded-lg items-center">
-    <icon-base height="42" width="72" viewBox="0 0 24 24" class="mx-3">
+    <icon-base height="24" width="64" viewBox="0 0 24 24" class="mx-1">
       <icon-search
     /></icon-base>
     <input
       name="search"
       placeholder="Find food or beverage"
-      class="bg-black w-screen rounded-lg text-sm focus:outline-none"
+      class="bg-black h-10 w-screen rounded-lg text-sm focus:outline-none"
     />
   </div>
 </template>

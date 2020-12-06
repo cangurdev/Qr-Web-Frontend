@@ -54,6 +54,7 @@ export default {
     addCart() {
       mutations.addCart({ item: this.item, piece: 1 });
       mutations.increasePrice(this.item.price);
+      mutations.increaseCount();
     },
   },
 };
