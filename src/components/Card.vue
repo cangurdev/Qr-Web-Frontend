@@ -1,11 +1,13 @@
 <template>
   <div class="m-4 flex space-y-2 max-w-md h-32 rounded-lg shadow-md card-body">
-    <router-link to="/detail"
-      ><img
-        class="w-36 h-32 rounded-tl-lg rounded-bl-lg"
-        :src="item.image"
-        alt="image"
-    /></router-link>
+    <router-link :to="{ path: 'Detail', query: { q: item } }">
+      <div class="w-36">
+        <img
+          class="h-32 rounded-tl-lg rounded-bl-lg"
+          :src="item.image"
+          alt="image"
+        /></div
+    ></router-link>
     <div class="text-center grid grid-rows-3 mx-4">
       <div>
         <p class="text-white">{{ item.name }}</p>

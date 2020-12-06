@@ -1,15 +1,15 @@
 <template>
-  <div class="m-4 flex space-y-2 max-w-md h-32 rounded-lg shadow-md card-body">
+  <div class="m-4 flex max-w-md space-y-2 h-32 rounded-lg shadow-md card-body">
     <img
-      class="block w-28 sm:mx-0 flex-shrink-0 rounded-tl-lg rounded-bl-lg"
+      class="block w-36 sm:mx-0 flex-shrink-0 rounded-tl-lg rounded-bl-lg"
       :src="item.item.image"
       alt="image"
     />
     <div class="grid grid-rows-2 ml-4 place-self-center">
       <div>
-        <p class="text-white">{{ item.item.name }}</p>
+        <p class="text-white text-left">{{ item.item.name }}</p>
       </div>
-      <div class="flex items-end pb-2">
+      <div class="flex pb-2">
         <div class="flex pb-1">
           <icon-base height="14" width="14" iconColor="#793CFF"
             ><icon-price
@@ -20,7 +20,7 @@
         </div>
       </div>
     </div>
-    <div class="place-self-center ml-9">
+    <div class="place-self-center absolute left-80">
       <button v-on:click="add()" class="focus:outline-none">
         <icon-base height="16" width="24" iconColor="white" viewBox="0 0 16 16"
           ><icon-plus

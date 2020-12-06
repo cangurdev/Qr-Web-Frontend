@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navbar page="detail" />
-    <DetailCard :item="this.$route.query.af" />
+    <DetailCard :item="this.$route.query.q" />
     <Fab />
   </div>
 </template>
