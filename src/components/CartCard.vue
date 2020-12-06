@@ -2,12 +2,12 @@
   <div class="m-4 flex space-y-2 max-w-md h-32 rounded-lg shadow-md card-body">
     <img
       class="block w-28 sm:mx-0 flex-shrink-0 rounded-tl-lg rounded-bl-lg"
-      :src="item.image"
+      :src="item.item.image"
       alt="image"
     />
     <div class="grid grid-rows-2 ml-4 place-self-center">
       <div>
-        <p class="text-white">{{ item.name }}</p>
+        <p class="text-white">{{ item.item.name }}</p>
       </div>
       <div class="flex items-end pb-2">
         <div class="flex pb-1">
@@ -15,7 +15,7 @@
             ><icon-price
           /></icon-base>
           <p class="text-white card-font-color ml-0.5 text-xs">
-            {{ item.price }} TL
+            {{ item.item.price }} TL
           </p>
         </div>
       </div>
@@ -27,7 +27,7 @@
         /></icon-base>
       </button>
 
-      <p class="mt-3 text-white">{{ this.piece }}</p>
+      <p class="mt-3 text-white">{{ item.piece }}</p>
       <button v-on:click="remove()" class="focus:outline-none">
         <icon-base
           class="mt-1"
@@ -60,23 +60,18 @@ export default {
   props: {
     item: Object,
   },
-  data: function () {
-    return {
-      piece: 1,
-    };
-  },
   methods: {
     add() {
-      this.piece += 1;
-      mutations.increasePrice(this.item.price);
+      mutations.increasePiece(this.item.item.id);
+      mutations.increasePrice(this.item.item.price);
     },
     remove() {
-      if (this.piece > 1) {
-        this.piece -= 1;
-        mutations.decreasePrice(this.item.price);
-      } else if (this.piece == 1) {
-        mutations.removeCart(this.item);
-        mutations.decreasePrice(this.item.price);
+      if (this.item.piece > 1) {
+        mutations.decreasePiece(this.item.item.id);
+        mutations.decreasePrice(this.item.item.price);
+      } else if (this.item.piece == 1) {
+        mutations.removeCart(this.item.item.id);
+        mutations.decreasePrice(this.item.item.price);
       }
     },
   },

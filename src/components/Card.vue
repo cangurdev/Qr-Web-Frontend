@@ -52,7 +52,7 @@ export default {
   },
   methods: {
     addCart() {
-      mutations.addCart(this.item);
+      mutations.addCart({ item: this.item, piece: 1 });
       mutations.increasePrice(this.item.price);
     },
   },
