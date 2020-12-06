@@ -14,12 +14,12 @@
       </p>
     </div>
     <div class="flex pb-1 justify-center my-8">
-      <icon-base height="14" width="14"><icon-price /></icon-base>
-      <p class="text-white text-xs">{{ item.price }} TL</p>
+      <icon-base height="14" width="14" class="mt-1"><icon-price /></icon-base>
+      <p class="text-white text-base ml-1">{{ item.price }} TL</p>
     </div>
     <button
       v-on:click="addCart()"
-      class="px-8 py-1 card-font-size text-white bg-purple-600 rounded-lg hover:text-white focus:outline-none"
+      class="px-8 py-1 text-base text-white bg-purple-600 rounded-lg hover:text-white focus:outline-none"
     >
       Sepete Ekle
     </button>
