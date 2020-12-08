@@ -1,6 +1,6 @@
 <template>
   <div
-    class="m-4 flex space-y-2 max-w-md h-32 rounded-lg shadow-md card-body z-10"
+    class="m-4 space-y-2 flex max-w-md h-32 rounded-lg shadow-md card-body z-10"
   >
     <router-link :to="{ path: 'Detail', query: { q: item } }">
       <div class="w-36">
@@ -10,18 +10,18 @@
           alt="image"
         /></div
     ></router-link>
-    <div class="text-center grid grid-rows-3 mx-4">
+    <div class="text-center mx-3 w-full grid">
       <div>
-        <p class="text-white">{{ item.name }}</p>
+        <p class="text-white h-6">{{ item.name }}</p>
       </div>
-      <div class="items-center">
-        <p class="text-gray-500 card-font-size">
+      <div class="flex self-center m-auto h-12">
+        <p class="text-gray-500 card-font-size flex self-center">
           {{ item.ingredients }}
         </p>
       </div>
 
-      <div class="flex justify-around md:mx-3 lg:mx-8 items-end pb-2">
-        <div class="flex pb-1">
+      <div class="flex justify-around pb-1">
+        <div class="flex self-center">
           <icon-base height="14" width="14" iconColor="white"
             ><icon-price
           /></icon-base>
@@ -29,7 +29,7 @@
         </div>
         <button
           v-on:click="addCart()"
-          class="w-20 px-3 py-1 card-font-size text-white bg-purple-600 rounded-lg hover:text-white focus:outline-none"
+          class="self-center w-20 py-1 card-font-size text-white bg-purple-600 rounded-lg hover:text-white focus:outline-none"
           :class="this.style"
         >
           {{ this.message }}
