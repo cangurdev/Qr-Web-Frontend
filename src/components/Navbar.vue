@@ -1,5 +1,7 @@
 <template>
-  <div class="justify-between flex align-middle py-2 mx-4 max-w-md">
+  <div
+    class="sticky top-0 nav-bg justify-between flex align-middle py-2 mx-4 max-w-md"
+  >
     <div class="div-color rounded-full h-12 w-12 p-3 justify-self-center">
       <icon-base
         height="24"
@@ -78,5 +80,8 @@ export default {
 <style>
 .div-color {
   background-color: #292e3c;
+}
+.nav-bg {
+  background-color: #1e2026;
 }
 </style>

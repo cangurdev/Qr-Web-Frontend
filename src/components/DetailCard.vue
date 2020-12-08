@@ -17,14 +17,14 @@
         alt="image"
       />
       <div>
-        <p class="text-white text-lg my-2">{{ item.name }}</p>
+        <p class="text-white text-2xl my-2">{{ item.name }}</p>
       </div>
       <div class="items-center">
-        <p class="text-gray-500 card-font-size">
+        <p class="text-gray-500">
           {{ item.ingredients }}
         </p>
       </div>
-      <div class="flex pb-1 justify-center my-8">
+      <div class="flex pb-1 justify-center mt-4 mb-8">
         <icon-base height="14" width="14" class="mt-1"
           ><icon-price
         /></icon-base>
@@ -33,8 +33,9 @@
       <button
         v-on:click="addCart()"
         class="px-8 py-1 text-base text-white bg-purple-600 rounded-lg hover:text-white focus:outline-none"
+        :class="this.style"
       >
-        Sepete Ekle
+        {{ this.message }}
       </button>
     </div>
   </div>
@@ -56,15 +57,25 @@ export default {
   props: {
     item: Object,
   },
+  data: function () {
+    return {
+      message: "Sepete Ekle",
+      style: "",
+    };
+  },
   methods: {
     addCart() {
       mutations.addCart({ item: this.item, piece: 1 });
       mutations.increasePrice(this.item.price);
       mutations.increaseCount();
+      this.style =
+        "transition duration-300 ease-in-out hover:bg-green-600 transform hover:scale-110";
+      this.message = "Eklendi";
+      setTimeout(() => {
+        this.message = "Sepete Ekle";
+        this.style = "transition duration-300 ease-in-out";
+      }, 600);
     },
   },
 };
 </script>
-
-<style>
-</style>

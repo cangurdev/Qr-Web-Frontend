@@ -1,5 +1,7 @@
 <template>
-  <div class="m-4 flex space-y-2 max-w-md h-32 rounded-lg shadow-md card-body">
+  <div
+    class="m-4 flex space-y-2 max-w-md h-32 rounded-lg shadow-md card-body z-10"
+  >
     <router-link :to="{ path: 'Detail', query: { q: item } }">
       <div class="w-36">
         <img
@@ -27,9 +29,10 @@
         </div>
         <button
           v-on:click="addCart()"
-          class="px-3 py-1 card-font-size text-white bg-purple-600 rounded-lg hover:text-white focus:outline-none"
+          class="w-20 px-3 py-1 card-font-size text-white bg-purple-600 rounded-lg hover:text-white focus:outline-none"
+          :class="this.style"
         >
-          Sepete Ekle
+          {{ this.message }}
         </button>
       </div>
     </div>
@@ -50,11 +53,24 @@ export default {
   props: {
     item: Object,
   },
+  data: function () {
+    return {
+      message: "Sepete Ekle",
+      style: "",
+    };
+  },
   methods: {
     addCart() {
       mutations.addCart({ item: this.item, piece: 1 });
       mutations.increasePrice(this.item.price);
       mutations.increaseCount();
+      this.style =
+        "transition duration-300 ease-in-out hover:bg-green-600 transform hover:scale-110";
+      this.message = "  Eklendi ";
+      setTimeout(() => {
+        this.message = "Sepete Ekle";
+        this.style = "transition duration-300 ease-in-out";
+      }, 600);
     },
   },
 };

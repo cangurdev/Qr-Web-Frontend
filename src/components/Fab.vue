@@ -1,7 +1,7 @@
 <template>
   <div class="">
-    <Alert :message="message" :show="clickedButton" />
-    <div class="dropdown inline-block fixed bottom-2 right-2">
+    <Alert :message="message" :show="clickedButton" :status="true" />
+    <div class="dropdown inline-block fixed bottom-2 right-2 z-20">
       <button
         class="bg-black text-gray-700 font-semibold p-4 rounded-full inline-flex focus:outline-none"
         v-on:click="onClick()"

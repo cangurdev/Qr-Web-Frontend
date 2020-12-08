@@ -1,5 +1,5 @@
 <template>
-  <div v-if="show === true" class="absolute top-16 w-48 m-auto left-0 right-0">
+  <div v-if="show === true" class="fixed top-16 w-48 m-auto left-0 right-0">
     <div
       class="flex items-center p-3 shadow-md rounded-lg"
       :style="status ? bgGreen : bgRed"

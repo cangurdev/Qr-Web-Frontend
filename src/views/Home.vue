@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <Navbar page="menu" />
+    <Fab />
     <SearchBar />
     <CategoryCard />
-    <Fab />
     <div v-for="item in items" v-bind:key="item">
       <Card :item="item" />
     </div>
@@ -51,6 +51,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
 }
 </style>
