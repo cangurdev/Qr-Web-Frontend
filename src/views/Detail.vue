@@ -10,9 +10,11 @@
 import Navbar from "../components/Navbar.vue";
 import Fab from "../components/Fab.vue";
 import DetailCard from "../components/DetailCard.vue";
-
 export default {
   name: "Detail",
+  title() {
+    return this.$route.query.q.name;
+  },
   components: { Navbar, Fab, DetailCard },
 };
 </script>

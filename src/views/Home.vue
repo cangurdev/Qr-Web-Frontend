@@ -19,8 +19,10 @@ import Navbar from "../components/Navbar.vue";
 import Fab from "../components/Fab.vue";
 
 import { db } from "../db";
+
 export default {
   name: "App",
+  title: "Menu",
   components: {
     Card,
     CategoryCard,

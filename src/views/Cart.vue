@@ -18,6 +18,7 @@ import { store } from "../store";
 
 export default {
   name: "Cart",
+  title: "Sepet",
   components: {
     Navbar,
     CartCard,

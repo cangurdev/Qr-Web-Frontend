@@ -16,6 +16,9 @@ const routes = [
     path: '/cart',
     name: 'Cart',
     component: Cart,
+    meta: {
+      title: "Sepet"
+    }
   },
   {
     path: '/detail',
