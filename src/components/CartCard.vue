@@ -1,5 +1,5 @@
 <template>
-  <div class="m-4 flex max-w-md space-y-2 h-32 rounded-lg shadow-md card-body">
+  <div class="m-4 flex relative max-w-md space-y-2 h-32 rounded-lg shadow-md card-body lg:w-screen">
     <img
       class="block w-36 sm:mx-0 flex-shrink-0 rounded-tl-lg rounded-bl-lg"
       :src="item.item.image"
@@ -20,24 +20,23 @@
         </div>
       </div>
     </div>
-    <div class="place-self-center absolute left-80">
-      <button v-on:click="add()" class="focus:outline-none">
+      <div class="absolute top-4 right-5">
+        <button v-on:click="add()" class="focus:outline-none">
         <icon-base height="16" width="24" iconColor="white" viewBox="0 0 16 16"
           ><icon-plus
         /></icon-base>
       </button>
-
       <p class="mt-3 text-white">{{ item.piece }}</p>
       <button v-on:click="remove()" class="focus:outline-none">
         <icon-base
-          class="mt-1"
+          class="mt-2"
           height="20"
           width="24"
           iconColor="white"
           viewBox="0 0 16 16"
           ><icon-minus
         /></icon-base>
-      </button>
+      </button>      
     </div>
   </div>
 </template>

@@ -24,7 +24,7 @@
           </p>
           <button
             @click="cardBill()"
-            class="rounded-full bg-black hover:bg-gray-400 p-4 block whitespace-no-wrap focus:outline-none"
+            class="rounded-full bg-black hover:bg-green-700 p-4 block whitespace-no-wrap focus:outline-none"
           >
             <icon-base width="32" height="32" viewBox="0 0 48 48">
               <icon-bill />
@@ -39,7 +39,7 @@
           </p>
           <button
             @click="cashBill()"
-            class="rounded-full bg-black hover:bg-gray-400 p-4 block whitespace-no-wrap focus:outline-none"
+            class="rounded-full bg-black hover:bg-green-700 p-4 block whitespace-no-wrap focus:outline-none"
           >
             <icon-base width="32" height="32" viewBox="0 0 48 48">
               <icon-bill />
@@ -54,7 +54,7 @@
           </p>
           <button
             @click="callWaiter()"
-            class="rounded-full bg-black hover:bg-gray-400 p-4 block whitespace-no-wrap focus:outline-none"
+            class="rounded-full bg-black hover:bg-green-700 p-4 block whitespace-no-wrap focus:outline-none"
           >
             <icon-base width="32" height="32" viewBox="0 0 24 24">
               <icon-hand />
@@ -113,6 +113,7 @@ export default {
       setTimeout(() => {
         this.clickedButton = false;
       }, 2000);
+      this.onClick();
     },
     cashBill() {
       db.collection("Orders")
@@ -129,6 +130,7 @@ export default {
       setTimeout(() => {
         this.clickedButton = false;
       }, 2000);
+      this.onClick();
     },
     cardBill() {
       db.collection("Orders")
@@ -145,6 +147,7 @@ export default {
       setTimeout(() => {
         this.clickedButton = false;
       }, 2000);
+      this.onClick();
     },
   },
 };

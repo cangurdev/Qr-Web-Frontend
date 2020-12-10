@@ -1,6 +1,6 @@
 <template>
   <div
-    class="sticky top-0 nav-bg justify-between flex align-middle py-2 mx-4 max-w-md"
+    class="sticky top-0 nav-bg justify-between flex align-middle py-2 mx-4 max-w-md z-20"
   >
     <div class="div-color rounded-full h-12 w-12 p-3 justify-self-center">
       <icon-base
