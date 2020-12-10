@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     order() {
-      db.collection("MOrders")
+      db.collection("Orders")
         .add({
           orderType: "Yeni Sipariş!",
           tableNumber: "21",
