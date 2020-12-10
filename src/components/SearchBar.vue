@@ -1,6 +1,6 @@
 <template>
   <div class="text-white max-w-md flex bg-black m-4 rounded-lg items-center">
-    <icon-base height="24" width="64" viewBox="0 0 24 24" class="mx-1">
+    <icon-base height="24" width="64" viewBox="0 0 24 24" class="mx-1" opacity="0.5">
       <icon-search
     /></icon-base>
     <input
