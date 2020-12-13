@@ -17,9 +17,9 @@
   <p class="text-xl">Qr Menu for Cafes and Restaurants</p>
   <p class="text-6xl">Connecting your customers<br> without touch</p>
   <div class="flex text-white justify-around z-20 my-12">
-  <router-link to="/menu">
-    <div class="mx-2 focus:outline-none rounded-full py-2 px-4 menuButtonColor">Menu Preview</div>
-  </router-link>
+
+    <button @click="openNew()" class="mx-2 focus:outline-none rounded-full py-2 px-4 menuButtonColor">Menu Preview</button>
+
   <button class="mx-2 focus:outline-none rounded-full py-2 px-4 adminButtonColor">Admin Preview</button>
     </div>
   </div>
@@ -42,6 +42,11 @@ export default {
       bgImg: background
     };
   },
+  methods:{
+    openNew(){
+      window.open("/menu",'targetWindow','width=448, height=650');
+    }
+  }
 }
 </script>
 
