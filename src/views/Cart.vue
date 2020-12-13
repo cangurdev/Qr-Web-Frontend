@@ -1,6 +1,7 @@
 <template>
   <div class="pb-4">
     <Navbar page="cart" />
+    <p v-if="items.length === 0" class="lg:w-96 m-4 text-white flex justify-center">Sepetiniz Boş</p>
     <div v-for="item in items" v-bind:key="item">
       <CartCard :item="item" />
     </div>

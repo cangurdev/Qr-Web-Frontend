@@ -46,6 +46,7 @@ export default {
   },
   methods: {
     order() {
+      if(this.price > 0){
       db.collection("Orders")
         .add({
           orderType: "Yeni Sipariş!",
@@ -57,7 +58,10 @@ export default {
           this.message = "Sipariş Verilemedi";
           this.status = false;
         });
-
+      }else{
+        this.message = "Sepetiniz Boş";
+        this.status = false;
+      }
       this.clicked = true;
       setTimeout(() => {
         this.clicked = false;
