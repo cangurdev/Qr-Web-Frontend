@@ -35,6 +35,7 @@
 import devices from "../assets/Devices.png"
 import background from "../assets/background.png"
 export default {
+  title:"Qr Menu",
   data() {
     return {
       img: devices,

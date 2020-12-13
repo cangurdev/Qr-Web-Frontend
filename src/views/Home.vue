@@ -4,7 +4,7 @@
     <Fab />
     <SearchBar />
     <CategoryCard />
-    <div v-for="item in items" v-bind:key="item">
+    <div v-for="item in items" v-bind:key="item.id">
       <Card :item="item" />
     </div>
   </div>
@@ -17,7 +17,7 @@ import CategoryCard from "../components/CategoryCard.vue";
 import SearchBar from "../components/SearchBar.vue";
 import Navbar from "../components/Navbar.vue";
 import Fab from "../components/Fab.vue";
-
+import { mutations } from "../store";
 import { db } from "../db";
 
 export default {
@@ -35,6 +35,9 @@ export default {
       items: [],
     };
   },
+  mounted: function () {
+mutations.setStorage();
+},
   firestore: {
     items: db.collection("hamburger"),
   },

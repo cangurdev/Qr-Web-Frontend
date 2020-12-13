@@ -12,7 +12,7 @@
         ><icon-menu
       /></icon-base>
     </div>
-    <router-link to="/">
+    <router-link to="/menu">
       <p class="pt-4 text-white text-2xl">Cafe 236</p>
     </router-link>
     <div v-if="page === 'menu' || page === 'detail'">
