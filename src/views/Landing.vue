@@ -1,6 +1,6 @@
 <template>
 <div class="text-black bg-white absolute left-0 w-screen">
-      <img :src="bgImg" class="absolute right-0 top-0 z-10 h-screen" width="650"/>
+      <img :src="bgImg" class="absolute right-0 top-0 z-10 h-screen" width="50%"/>
 
   <div class="flex absolute right-8 top-8 text-white z-20">
     <div class="flex mx-16">
@@ -44,7 +44,7 @@ export default {
   },
   methods:{
     openNew(){
-      window.open("/menu",'targetWindow','width=448, height=650');
+      window.open("/menu",'targetWindow','width=448, height=700');
     }
   }
 }
