@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Cart from '../views/Cart.vue'
 import Detail from '../views/Detail.vue'
 import Landing from '../views/Landing.vue'
+import AdminHome from '../views/admin/Home.vue'
 
 Vue.use(VueRouter)
 
@@ -30,6 +31,11 @@ const routes = [
     path:'/menu',
     name:'Home',
     component: Home
+  },
+  {
+    path:'/admin',
+    name:'AdminHome',
+    component: AdminHome
   }
 ]
 
