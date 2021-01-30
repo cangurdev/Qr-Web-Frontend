@@ -5,6 +5,7 @@ import Cart from '../views/Cart.vue'
 import Detail from '../views/Detail.vue'
 import Landing from '../views/Landing.vue'
 import AdminHome from '../views/admin/Home.vue'
+import Employees from '../views/admin/Employees.vue'
 
 Vue.use(VueRouter)
 
@@ -36,6 +37,11 @@ const routes = [
     path:'/admin',
     name:'AdminHome',
     component: AdminHome
+  },
+  {
+    path: '/admin/employees',
+    name: 'Employees',
+    component: Employees
   }
 ]
 

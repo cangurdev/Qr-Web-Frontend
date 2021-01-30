@@ -1,5 +1,5 @@
 <template>
-  <div class="w-64 h-screen background mt-8 sm:mt-0">
+  <div class="w-64 h-screen background mt-8 sm:mt-0 fixed left-0">
     <div class="flex items-center justify-center mt-10">
       <p>Cafe 236</p>
     </div>
@@ -23,7 +23,7 @@
       </a>
 
       <a class="flex items-center mt-5 py-2 text-gray-400 border-r-4 border-gray-800 hover:bg-gray-700 hover:text-gray-100 hover:border-gray-100"
-         href="#">
+         href="/admin/employees">
         <icon-base height="24" width="64" viewBox="0 0 20 20">
           <icon-person
           />
