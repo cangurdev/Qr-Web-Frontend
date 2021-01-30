@@ -6,6 +6,7 @@ import Detail from '../views/Detail.vue'
 import Landing from '../views/Landing.vue'
 import AdminHome from '../views/admin/Home.vue'
 import Employees from '../views/admin/Employees.vue'
+import Menu from '../views/admin/Menu.vue'
 
 Vue.use(VueRouter)
 
@@ -42,6 +43,11 @@ const routes = [
     path: '/admin/employees',
     name: 'Employees',
     component: Employees
+  },
+  {
+    path: '/admin/menu',
+    name: 'Menu',
+    component: Menu
   }
 ]
 

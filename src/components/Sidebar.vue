@@ -51,7 +51,7 @@
         <span class="ont-medium">Sermaye</span>
       </a>
       <a class="flex items-center mt-5 py-2 text-gray-400 border-r-4 border-gray-800 hover:bg-gray-700 hover:text-gray-100 hover:border-gray-100"
-         href="#">
+         href="/admin/menu">
         <icon-base height="24" width="64" viewBox="0 0 24 24">
           <icon-menu-box
           />
