@@ -6,6 +6,8 @@ import Detail from '../views/Detail.vue'
 import Landing from '../views/Landing.vue'
 import AdminHome from '../views/admin/Home.vue'
 import Employees from '../views/admin/Employees.vue'
+import Menu from '../views/admin/Menu.vue'
+import Stock from '../views/admin/Stock.vue'
 
 Vue.use(VueRouter)
 
@@ -42,6 +44,16 @@ const routes = [
     path: '/admin/employees',
     name: 'Employees',
     component: Employees
+  },
+  {
+    path: '/admin/menu',
+    name: 'Menu',
+    component: Menu
+  },
+  {
+    path: '/admin/stok',
+    name: 'Stock',
+    component: Stock
   }
 ]
 
