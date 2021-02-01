@@ -1,6 +1,6 @@
 <template>
   <div class="lg:flex lg:justify-center">
-    <div id="app">
+    <div id="app" class="lg:w-full">
       <router-view/>
     </div>
   </div>

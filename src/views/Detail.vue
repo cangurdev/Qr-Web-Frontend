@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="lg:absolute lg:left-96">
     <Navbar page="detail"/>
     <DetailCard :item="this.$route.query.q"/>
     <Fab/>

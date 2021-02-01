@@ -1,11 +1,10 @@
 <template>
-  <div class="w-64 h-screen background mt-8 sm:mt-0 fixed left-0">
-    <div class="flex items-center justify-center mt-10">
-      <p>Cafe 236</p>
+  <div class="w-64 h-screen background mt-8 sm:mt-0 fixed left-0 top-0 text-white">
+    <div class="flex items-center justify-center mt-4">
+      <p class="border-b-2 border-white-800 w-full pb-4 text-3xl">Cafe 236</p>
     </div>
-
     <nav class="mt-10">
-      <a class="flex items-center py-2 bg-gray-700 text-gray-100 border-r-4 border-gray-100" href="#">
+      <a class="flex items-center py-2" href="#">
         <icon-base height="24" width="64" viewBox="0 0 24 24">
           <icon-hand
           />
@@ -13,8 +12,8 @@
         <span class="font-medium">Siparişler</span>
       </a>
 
-      <a class="flex items-center mt-5 py-2 text-gray-400 border-r-4 border-gray-800 hover:bg-gray-700 hover:text-gray-100 hover:border-gray-100"
-         href="#">
+      <a class="flex items-center mt-5 py-2 hover:bg-gray-500 hover:text-black hover:border-gray-100"
+         href="/admin/qr">
         <icon-base height="24" width="64" viewBox="0 0 24 24">
           <icon-qr
           />
@@ -22,7 +21,7 @@
         <span class="font-medium">QR Oluştur</span>
       </a>
 
-      <a class="flex items-center mt-5 py-2 text-gray-400 border-r-4 border-gray-800 hover:bg-gray-700 hover:text-gray-100 hover:border-gray-100"
+      <a class="flex items-center mt-5 py-2 hover:bg-gray-700 hover:text-gray-100 hover:border-gray-100"
          href="/admin/employees">
         <icon-base height="24" width="64" viewBox="0 0 20 20">
           <icon-person
@@ -32,7 +31,7 @@
         <span class="font-medium">Çalışanlar</span>
       </a>
 
-      <a class="flex items-center mt-5 py-2 text-gray-400 border-r-4 border-gray-800 hover:bg-gray-700 hover:text-gray-100 hover:border-gray-100"
+      <a class="flex items-center mt-5 py-2 hover:bg-gray-700 hover:text-gray-100 hover:border-gray-100"
          href="/admin/stok">
         <icon-base height="24" width="64" viewBox="0 0 24 24">
           <icon-box
@@ -41,7 +40,7 @@
 
         <span class=" font-medium">Stok Durumları</span>
       </a>
-      <a class="flex items-center mt-5 py-2 text-gray-400 border-r-4 border-gray-800 hover:bg-gray-700 hover:text-gray-100 hover:border-gray-100"
+      <a class="flex items-center mt-5 py-2 hover:bg-gray-700 hover:text-gray-100 hover:border-gray-100"
          href="/admin/menu">
         <icon-base height="24" width="64" viewBox="0 0 24 24">
           <icon-menu-box
@@ -53,8 +52,8 @@
     </nav>
 
     <div class="absolute bottom-0 my-4">
-      <a class="flex items-center py-2 px-8 text-gray-600 hover:text-gray-500" href="#">
-        <span class="mx-4 font-medium">Can baba</span>
+      <a class="flex items-center py-2 px-8 hover:text-gray-500" href="#">
+        <span class="mx-4 font-medium">Can Gür</span>
       </a>
     </div>
   </div>

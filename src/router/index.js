@@ -10,6 +10,7 @@ import Menu from '../views/admin/Menu.vue'
 import Stock from '../views/admin/Stock.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
+import QrPage from '../views/admin/QrPage.vue'
 
 Vue.use(VueRouter)
 
@@ -66,6 +67,11 @@ const routes = [
         path: '/register',
         name: 'Register',
         component: Register
+    },
+    {
+        path: '/admin/qr',
+        name: 'Qr',
+        component: QrPage
     }
 ]
 

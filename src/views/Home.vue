@@ -1,5 +1,5 @@
 <template>
-  <div id="home">
+  <div id="home" class="lg:absolute lg:left-96 lg:w-full">
     <Navbar page="menu"/>
     <Fab/>
     <SearchBar/>

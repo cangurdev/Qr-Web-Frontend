@@ -4,7 +4,7 @@
     <div class="absolute right-32 ml-64 min-h-screen flex flex-col justify-center sm:py-12">
       <div class="relative sm:max-w-xl sm:mx-auto">
         <p class="text-left text-3xl text-white my-2">Hoş Geldiniz</p>
-        <div class="relative w-96 bg-white mx-8 md:mx-0 shadow rounded-lg sm:py-4 px-12">
+        <div class="relative w-96 bg-white mx-8 md:mx-0 shadow rounded-lg sm:py -4 px-12">
           <div class="max-w-md mx-auto">
             <div class="leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
               <div class="flex flex-col">
