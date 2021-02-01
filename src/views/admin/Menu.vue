@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import Sidebar from '../../components/Sidebar.vue';
-import MenuList from '../../components/MenuList.vue';
+import Sidebar from '../../components/admin/Sidebar.vue';
+import MenuList from '../../components/admin/MenuList.vue';
 import SearchBar from '../../components/SearchBar.vue';
 
 export default {
