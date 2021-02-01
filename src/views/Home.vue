@@ -1,11 +1,11 @@
 <template>
-  <div id="app">
-    <Navbar page="menu" />
-    <Fab />
-    <SearchBar />
-    <CategoryCard />
+  <div id="home">
+    <Navbar page="menu"/>
+    <Fab/>
+    <SearchBar/>
+    <CategoryCard/>
     <div v-for="item in items" v-bind:key="item.id">
-      <Card :item="item" />
+      <Card :item="item"/>
     </div>
   </div>
 </template>
@@ -17,8 +17,8 @@ import CategoryCard from "../components/CategoryCard.vue";
 import SearchBar from "../components/SearchBar.vue";
 import Navbar from "../components/Navbar.vue";
 import Fab from "../components/Fab.vue";
-import { mutations } from "../store";
-import { db } from "../db";
+import {mutations} from "../store";
+import {db} from "../db";
 
 export default {
   name: "App",
@@ -36,8 +36,8 @@ export default {
     };
   },
   mounted: function () {
-mutations.setStorage();
-},
+    mutations.setStorage();
+  },
   firestore: {
     items: db.collection("hamburger"),
   },
@@ -50,12 +50,14 @@ body {
   height: 100%;
   background-color: #1e2026;
 }
-#app {
+
+#home {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   padding-bottom: 30px;
+  background-color: #1e2026;
 }
 </style>

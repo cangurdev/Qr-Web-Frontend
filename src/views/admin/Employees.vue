@@ -1,19 +1,19 @@
 <template>
-<div>
-<Sidebar />
-<SearchBar />
-<EmployeesList />
-</div>
+  <div>
+    <Sidebar/>
+    <SearchBar/>
+    <EmployeesList/>
+  </div>
 </template>
 
 <script>
-import Sidebar from '../../components/Sidebar.vue';
-import EmployeesList from '../../components/EmployeesList.vue'
+import Sidebar from '../../components/admin/Sidebar.vue';
+import EmployeesList from '../../components/admin/EmployeesList.vue'
 import SearchBar from '../../components/SearchBar.vue';
 
 export default {
   name: "Employees",
-  components:{
+  components: {
     Sidebar,
     EmployeesList,
     SearchBar,
