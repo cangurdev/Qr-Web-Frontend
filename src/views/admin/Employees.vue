@@ -2,7 +2,22 @@
   <div>
     <Sidebar/>
     <SearchBar/>
-    <EmployeesList/>
+
+    <table class="table-fixed mx-auto w-1/2">
+      <thead class="text-white">
+      <tr class="flex mb-4 flex justify-between">
+        <th class="px-8 w-1/3">isim</th>
+        <th class="px-8 w-1/3">Görev</th>
+        <th class="px-8 w-1/3">Telefon</th>
+      </tr>
+      </thead>
+      <hr>
+      <tbody class="text-white w-64">
+      <div v-for="item in items" v-bind:key="item.id">
+        <EmployeesList :item="item"/>
+      </div>
+      </tbody>
+    </table>
   </div>
 </template>
 
@@ -10,6 +25,7 @@
 import Sidebar from '../../components/admin/Sidebar.vue';
 import EmployeesList from '../../components/admin/EmployeesList.vue'
 import SearchBar from '../../components/SearchBar.vue';
+import {db} from "../../db";
 
 export default {
   name: "Employees",
@@ -17,7 +33,15 @@ export default {
     Sidebar,
     EmployeesList,
     SearchBar,
-  }
+  },
+  data() {
+    return {
+      items: [],
+    };
+  },
+  firestore: {
+    items: db.collection("Staff"),
+  },
 }
 </script>
 

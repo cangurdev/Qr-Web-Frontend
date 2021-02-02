@@ -4,7 +4,7 @@
       <p class="border-b-2 border-white-800 w-full pb-4 text-3xl">Cafe 236</p>
     </div>
     <nav class="mt-10">
-      <a class="flex items-center py-2" href="#">
+      <a class="flex items-center py-2" href="/admin/siparisler">
         <icon-base height="24" width="64" viewBox="0 0 24 24">
           <icon-hand
           />

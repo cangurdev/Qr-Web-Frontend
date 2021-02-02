@@ -16,7 +16,7 @@
       </div>
       <div class="flex self-center m-auto h-12">
         <p class="text-gray-500 card-font-size flex self-center">
-          {{ item.ingredients }}
+              {{ item.ingredients }}
         </p>
       </div>
 

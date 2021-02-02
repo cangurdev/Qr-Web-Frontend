@@ -11,6 +11,7 @@ import Stock from '../views/admin/Stock.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import QrPage from '../views/admin/QrPage.vue'
+import Orders from '../views/admin/Orders.vue'
 
 Vue.use(VueRouter)
 
@@ -72,6 +73,11 @@ const routes = [
         path: '/admin/qr',
         name: 'Qr',
         component: QrPage
+    },
+    {
+        path: '/admin/siparisler',
+        name: 'Orders',
+        component: Orders,
     }
 ]
 
