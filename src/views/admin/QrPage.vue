@@ -11,12 +11,14 @@
         class="bg-color w-32 mt-4 flex justify-center items-center w-full text-white px-4 py-3 rounded-lg focus:outline-none">
       Oluştur
     </button>
+    <vue-qrcode value="https://qr-menu-mobile.web.app/menu" :options="{ width: 200 }"></vue-qrcode>
   </div>
 </template>
 <script>
 import IconBase from "../../components/IconBase.vue";
 import IconQr from "../../components/icons/IconQr";
 import Sidebar from '../../components/admin/Sidebar.vue';
+import VueQrcode from '@chenfengyuan/vue-qrcode';
 
 export default {
   name: "QrPage",
@@ -24,6 +26,7 @@ export default {
     IconBase,
     IconQr,
     Sidebar,
+    VueQrcode,
   }
 }
 </script>

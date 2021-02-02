@@ -8,8 +8,8 @@
         <p class="mx-4">Pricing</p>
       </div>
       <div class="flex mx-16">
-        <p class="mx-4">Sign Up</p>
-        <p class="mx-4">Login</p>
+        <a href="/register" class="mx-4">Sign Up</a>
+        <a href="/login" class="mx-4">Login</a>
       </div>
     </div>
     <div class="flex h-screen w-full">
@@ -22,7 +22,7 @@
             Preview
           </button>
 
-          <button class="mx-2 focus:outline-none rounded-full py-2 px-4 adminButtonColor">Admin Preview</button>
+          <a href="/admin" class="mx-2 focus:outline-none rounded-full py-2 px-4 adminButtonColor">Admin Preview</a>
         </div>
       </div>
       <div class="z-20 absolute right-20 top-40">
