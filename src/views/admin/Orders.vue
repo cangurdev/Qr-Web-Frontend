@@ -56,7 +56,7 @@ export default {
     Sidebar,
     OrderDetail,
   },
-  data: function () {
+  data() {
     return {
       items: [],
       detail: [],
