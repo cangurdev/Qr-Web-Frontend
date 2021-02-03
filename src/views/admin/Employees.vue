@@ -2,7 +2,6 @@
   <div>
     <Sidebar/>
     <SearchBar/>
-
     <table class="table-fixed mx-auto w-1/2">
       <thead class="text-white">
       <tr class="flex mb-4 flex justify-between">
@@ -13,8 +12,8 @@
       </thead>
       <hr>
       <tbody class="text-white w-64">
-      <div v-for="item in items" v-bind:key="item.id">
-        <EmployeesList :item="item"/>
+      <div v-for="employee in employees" v-bind:key="employee.id">
+        <EmployeesList :employee="employee"/>
       </div>
       </tbody>
     </table>
@@ -36,11 +35,11 @@ export default {
   },
   data() {
     return {
-      items: [],
+      employees: [],
     };
   },
   firestore: {
-    items: db.collection("Staff"),
+    employees: db.collection("Staff"),
   },
 }
 </script>

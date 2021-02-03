@@ -1,10 +1,10 @@
 <template>
   <tr class="text-center">
-    <td class="w-36"> 1</td>
-    <td class="w-36"> {{ item.tableNumber }}</td>
-    <td class="w-36"> {{ item.orderType }}</td>
-    <td class="w-36"> {{ timeSince(item.time) }}</td>
-    <td class="w-36"> Beklemede</td>
+    <td class="w-36">1</td>
+    <td class="w-36">{{ item.tableNumber }}</td>
+    <td class="w-36">{{ item.orderType }}</td>
+    <td class="w-36">{{ timeSince(item.time) }}</td>
+    <td class="w-36">{{ item.status }}</td>
   </tr>
 </template>
 
@@ -30,7 +30,7 @@ export default {
       }
       interval = seconds / 86400;
       if (interval > 1) {
-        return Math.floor(interval) + " Gün";
+        return Math.floor(interval) + " Gün Önce";
       }
       interval = seconds / 3600;
       if (interval > 1) {

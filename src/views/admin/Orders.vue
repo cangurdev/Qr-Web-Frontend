@@ -14,8 +14,9 @@
         </tr>
         </thead>
         <tbody class="text-white">
-        <div v-for="item in items.reverse()" v-bind:key="item.id">
-          <button class="w-full justify-between my-2 p-4 text-black bg-white rounded-md" v-on:click="selectOrder(item)">
+        <div v-for="item in items" v-bind:key="item.id">
+          <button class="w-full justify-between my-2 p-4 text-black bg-white rounded-md"
+                  v-on:click="selectOrder(item)">
             <OrderList :item="item"/>
           </button>
         </div>
@@ -28,7 +29,13 @@
         <div class="text-black p-4 my-4 w-96 bg-white rounded-md">Sipariş No</div>
         <div class="text-black p-4 my-4 w-96 h-auto bg-white rounded-md">
           <div v-for="item in detail" v-bind:key="item.id">
-            <OrderDetail :item="item"/>
+            <OrderDetail :order="item"/>
+          </div>
+          <hr class="bg-black h-0.5 rounded-md">
+          <p class="text-left mx-10 mt-4">Total {{ price }}₺</p>
+          <div class="mt-4 flex justify-around text-white text-sm">
+            <button v-on:click="inProcess(item)" class="bg-purple-600 rounded-lg px-4 py-1">İşlemde</button>
+            <button v-on:click="done(item)" class="bg-green-500 rounded-lg px-4">Tamamlandı</button>
           </div>
         </div>
       </div>
@@ -49,18 +56,30 @@ export default {
     Sidebar,
     OrderDetail,
   },
-  data() {
+  data: function () {
     return {
       items: [],
       detail: [],
+      price: 0,
+      item: {},
     };
   },
   firestore: {
-    items: db.collection("Orders").orderBy('time'),
+    items: db.collection("Orders").orderBy('time', 'desc'),
   },
   methods: {
-    selectOrder(order) {
-      this.detail = order;
+    selectOrder(item) {
+      this.detail = item.order.itemList;
+      this.price = item.order.price;
+      this.item = item;
+    },
+    inProcess(item) {
+      item.status = "İşlemde";
+      db.collection("Orders").doc(item.id).set(item);
+    },
+    done(item) {
+      item.status = "Tamamlandı";
+      db.collection("Orders").doc(item.id).set(item);
     }
   }
 }
