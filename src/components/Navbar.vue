@@ -2,16 +2,6 @@
   <div
     class="sticky top-0 nav-bg justify-between flex align-middle py-2 mx-4 max-w-md z-20"
   >
-    <div class="div-color rounded-full h-12 w-12 p-3 justify-self-center">
-      <icon-base
-        height="24"
-        width="24"
-        icon-name="menu"
-        iconColor="white"
-        viewBox="0 0 16.933 16.933"
-        ><icon-menu
-      /></icon-base>
-    </div>
     <router-link to="/menu">
       <p class="pt-4 text-white text-2xl">Cafe 236</p>
     </router-link>
@@ -49,7 +39,6 @@
 <script>
 import IconBase from "./IconBase.vue";
 import IconBasket from "./icons/IconBasket";
-import IconMenu from "./icons/IconMenu";
 import IconTrash from "./icons/IconTrash";
 import { mutations, store } from "../store";
 
@@ -58,7 +47,6 @@ export default {
   components: {
     IconBase,
     IconBasket,
-    IconMenu,
     IconTrash,
   },
   props: {

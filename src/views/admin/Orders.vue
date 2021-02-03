@@ -69,9 +69,11 @@ export default {
   },
   methods: {
     selectOrder(item) {
-      this.detail = item.order.itemList;
-      this.price = item.order.price;
-      this.item = item;
+      if (item.orderType == "Yeni Sipariş!") {
+        this.detail = item.order.itemList;
+        this.price = item.order.price;
+        this.item = item;
+      }
     },
     inProcess(item) {
       item.status = "İşlemde";

@@ -1,8 +1,7 @@
 <template>
   <div>
     <Sidebar/>
-    <SearchBar/>
-    <table class="table-fixed mx-auto w-1/2">
+    <table class="table-fixed mx-auto w-1/2 my-16">
       <thead class="text-white">
       <tr class="flex mb-4 flex justify-between">
         <th class="px-8 w-1/3">isim</th>
@@ -23,7 +22,6 @@
 <script>
 import Sidebar from '../../components/admin/Sidebar.vue';
 import EmployeesList from '../../components/admin/EmployeesList.vue'
-import SearchBar from '../../components/SearchBar.vue';
 import {db} from "../../db";
 
 export default {
@@ -31,7 +29,6 @@ export default {
   components: {
     Sidebar,
     EmployeesList,
-    SearchBar,
   },
   data() {
     return {

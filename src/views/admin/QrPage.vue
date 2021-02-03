@@ -4,40 +4,25 @@
     <icon-base height="150" width="150" viewBox="0 0 24 24" class="mx-28">
       <icon-qr></icon-qr>
     </icon-base>
-    <input type="number" min="1" placeholder="Masa Sayısını Giriniz"
+    <input type="number" min="1" placeholder="Masa Sayısını Giriniz" v-model="numberOfTables"
            class="p-2 border bg-gray-200 focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
     >
-    <button v-on:click="printCode()"
+    <button v-on:click="drawQr(numberOfTables)"
             class="bg-color w-32 mt-4 flex justify-center items-center w-full text-white px-4 py-3 rounded-lg focus:outline-none">
       Oluştur
     </button>
+    <button v-on:click="printCode"
+            class="bg-color w-32 mt-4 flex justify-center items-center w-full text-white px-4 py-3 rounded-lg focus:outline-none">
+      Bastır
+    </button>
     <div id="section-to-print">
-      <div class="flex">
-        <div class="flex-col">
-          <p>Masa 1</p>
-          <vue-qrcode value="https://qr-menu-mobile.web.app/menu" :options="{ width: 150 }"></vue-qrcode>
+      <div class="grid grid-cols-4 w-screen my-8">
+        <div v-for="(table,index) in urlArray" v-bind:key="table">
+          <p class="text-center">Masa {{ index + 1 }}</p>
+          <vue-qrcode :value="table" :options="{ width: 200 }"></vue-qrcode>
         </div>
-        <div class="flex-col">
-          <p>Masa 2</p>
-          <vue-qrcode value="https://qr-menu-mobile.web.app/menu" :options="{ width: 200 }"></vue-qrcode>
-        </div>
-        <div class="flex-col">
-          <p>Masa 3</p>
-          <vue-qrcode value="https://qr-menu-mobile.web.app/menu" :options="{ width: 200 }"></vue-qrcode>
-        </div>
-      </div>
-      <div class="flex">
-        <vue-qrcode value="https://qr-menu-mobile.web.app/menu" :options="{ width: 200 }"></vue-qrcode>
-        <vue-qrcode value="https://qr-menu-mobile.web.app/menu" :options="{ width: 200 }"></vue-qrcode>
-        <vue-qrcode value="https://qr-menu-mobile.web.app/menu" :options="{ width: 200 }"></vue-qrcode>
-      </div>
-      <div class="flex">
-        <vue-qrcode value="https://qr-menu-mobile.web.app/menu" :options="{ width: 200 }"></vue-qrcode>
-        <vue-qrcode value="https://qr-menu-mobile.web.app/menu" :options="{ width: 200 }"></vue-qrcode>
-        <vue-qrcode value="https://qr-menu-mobile.web.app/menu" :options="{ width: 200 }"></vue-qrcode>
       </div>
     </div>
-
   </div>
 </template>
 <script>
@@ -54,9 +39,20 @@ export default {
     Sidebar,
     VueQrcode,
   },
+  data: function () {
+    return {
+      numberOfTables: 0,
+      urlArray: [],
+    }
+  },
   methods: {
     printCode() {
       window.print();
+    },
+    drawQr(numberOfTables) {
+      for (let i = 1; i <= numberOfTables; i++) {
+        this.urlArray.push("https://qr-menu-mobile.web.app/menu/" + i);
+      }
     }
   }
 }
@@ -80,6 +76,6 @@ export default {
 }
 
 #section-to-print {
-  visibility: hidden;
+  visibility: visible;
 }
 </style>
