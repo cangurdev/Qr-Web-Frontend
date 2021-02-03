@@ -4,7 +4,7 @@
       <p class="border-b-2 border-white-800 w-full pb-4 text-3xl">Cafe 236</p>
     </div>
     <nav class="mt-10">
-      <a class="flex items-center py-2" href="/admin/siparisler">
+      <a class="flex items-center py-2 hover:bg-gray-500" href="/admin/siparisler">
         <icon-base height="24" width="64" viewBox="0 0 24 24">
           <icon-hand
           />
@@ -21,7 +21,7 @@
         <span class="font-medium">QR Oluştur</span>
       </a>
 
-      <a class="flex items-center mt-5 py-2 hover:bg-gray-700 hover:text-gray-100 hover:border-gray-100"
+      <a class="flex items-center mt-5 py-2 hover:bg-gray-500 hover:text-gray-100 hover:border-gray-100"
          href="/admin/employees">
         <icon-base height="24" width="64" viewBox="0 0 20 20">
           <icon-person
@@ -31,7 +31,7 @@
         <span class="font-medium">Çalışanlar</span>
       </a>
 
-      <a class="flex items-center mt-5 py-2 hover:bg-gray-700 hover:text-gray-100 hover:border-gray-100"
+      <a class="flex items-center mt-5 py-2 hover:bg-gray-500 hover:text-gray-100 hover:border-gray-100"
          href="/admin/stok">
         <icon-base height="24" width="64" viewBox="0 0 24 24">
           <icon-box
@@ -40,7 +40,7 @@
 
         <span class=" font-medium">Stok Durumları</span>
       </a>
-      <a class="flex items-center mt-5 py-2 hover:bg-gray-700 hover:text-gray-100 hover:border-gray-100"
+      <a class="flex items-center mt-5 py-2 hover:bg-gray-500 hover:text-gray-100 hover:border-gray-100"
          href="/admin/menu">
         <icon-base height="24" width="64" viewBox="0 0 24 24">
           <icon-menu-box
