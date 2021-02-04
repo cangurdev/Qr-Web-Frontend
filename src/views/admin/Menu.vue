@@ -16,14 +16,14 @@
       </thead>
       <hr>
       <tbody class="text-white w-64">
-      <div v-for="item in items" v-bind:key="item.id">
-        <div v-for="ite in item" v-bind:key="ite.id">
-          <MenuList :item="ite" :category="item"/>
+      <div v-for="category in categories" v-bind:key="category.id">
+        <div v-for="item in category" v-bind:key="item.id">
+          <MenuList :item="item"/>
         </div>
       </div>
       </tbody>
     </table>
-    <Modal/>
+    <Modal :categories="categories"/>
   </div>
 </template>
 
@@ -43,11 +43,11 @@ export default {
   },
   data() {
     return {
-      items: [],
+      categories: [],
     };
   },
   firestore: {
-    items: db.collection("Menu"),
+    categories: db.collection("Menu"),
   },
   methods: {
     toggleModal: function () {

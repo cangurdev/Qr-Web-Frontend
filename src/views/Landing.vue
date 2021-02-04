@@ -47,7 +47,7 @@ export default {
   },
   methods: {
     openNew() {
-      window.open("/menu", 'targetWindow', 'width=448, height=700');
+      window.open("/menu/1", 'targetWindow', 'width=448, height=700');
     }
   }
 }

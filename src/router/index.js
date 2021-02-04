@@ -22,7 +22,7 @@ const routes = [
         component: Landing,
     },
     {
-        path: '/cart',
+        path: '/cart/:id',
         name: 'Cart',
         component: Cart,
         meta: {
@@ -30,12 +30,12 @@ const routes = [
         }
     },
     {
-        path: '/detail',
+        path: '/:id/detail',
         name: 'Detail',
         component: Detail
     },
     {
-        path: '/menu',
+        path: '/menu/:id',
         name: 'Home',
         component: Home
     },
