@@ -47,9 +47,9 @@ export default {
     };
   },
   methods: {
-    async order() {
+    order() {
       if (this.price > 0) {
-        await this.increaseCount();
+        this.increaseCount();
         db.collection("Orders")
             .add({
               orderType: "Yeni Sipariş!",

@@ -3,14 +3,23 @@
     <Navbar page="menu"/>
     <Fab/>
     <SearchBar/>
-    <div class="flex">
+    <div class="flex justify-between ml-4 max-w-md">
       <button v-on:click="decreasePage" class="text-white text-3xl focus:outline-none">{{ backSign }}</button>
       <div v-for="category in arr" v-bind:key="category.id">
-        <CategoryCard :category="category"/>
+        <button v-on:click="setCategory(category)" class="focus:outline-none">
+          <CategoryCard :category="category"/>
+        </button>
       </div>
       <button v-on:click="increasePage" class="text-white text-3xl focus:outline-none">{{ forwardSign }}</button>
     </div>
-    <div v-for="category in categories" v-bind:key="category.id">
+    <div v-if="category.length === 0">
+      <div v-for="category in categories" v-bind:key="category.id">
+        <div v-for="item in category" v-bind:key="item.id">
+          <Card :item="item"/>
+        </div>
+      </div>
+    </div>
+    <div v-else>
       <div v-for="item in category" v-bind:key="item.id">
         <Card :item="item"/>
       </div>
@@ -45,6 +54,7 @@ export default {
       categoriesBar: [],
       backSign: "<",
       forwardSign: ">",
+      category: [],
     };
   },
   mounted: function () {
@@ -60,6 +70,9 @@ export default {
     }
   },
   methods: {
+    async setCategory(category) {
+      this.category = category;
+    },
     setCategoriesBar() {
       this.categoriesBar = this.categories;
     },

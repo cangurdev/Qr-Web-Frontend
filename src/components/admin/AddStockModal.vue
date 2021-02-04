@@ -13,29 +13,29 @@
             </h3>
             <button
                 class="text-3xl text-red-500 outline-none focus:outline-none"
-                v-on:click="toggleModal()">
+                v-on:click="closeModal">
               X
             </button>
           </div>
           <!--body-->
           <div class="p-6">
             <div class="flex-col">
-              <input v-model="product" type="text"
+              <input v-model="content.product" type="text"
                      class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-96 sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                      placeholder="Ürün">
             </div>
             <div class="flex-col my-2">
-              <input v-model="category" type="text"
+              <input v-model="content.category" type="text"
                      class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-96 sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                      placeholder="Kategori">
             </div>
             <div class="flex-col my-2">
-              <input v-model="brand" type="text"
+              <input v-model="content.brand" type="text"
                      class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-96 sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                      placeholder="Marka">
             </div>
             <div class="flex-col my-2">
-              <input v-model="quantity" type="text"
+              <input v-model="content.quantity" type="number"
                      class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-96 sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                      placeholder="Miktar">
             </div>
@@ -61,40 +61,44 @@ import {db} from "../../db";
 
 export default {
   name: "AddStockModel",
+  props: {
+    content: Object,
+  },
   methods: {
-    toggleModal: function () {
+    closeModal() {
+      console.log("asa" + this.content.id);
+      mutations.show();
+      mutations.clearStock();
+    },
+    toggleModal() {
       mutations.show();
     },
     addItem() {
       //adding item to firestore
-      db.collection("Stock").add(
-          {
-            brand: this.brand,
-            category: this.category,
-            product: this.product,
-            quantity: this.quantity,
-          });
-      this.clearFields();
+      if (this.content.id !== undefined) {
+        db.collection("Stock").doc(this.content.id).update(
+            {
+              brand: this.content.brand,
+              category: this.content.category,
+              product: this.content.product,
+              quantity: parseInt(this.content.quantity),
+            });
+      } else {
+        db.collection("Stock").add(
+            {
+              brand: this.content.brand,
+              category: this.content.category,
+              product: this.content.product,
+              quantity: parseInt(this.content.quantity),
+            });
+      }
+      this.closeModal();
     },
-    clearFields() {
-      this.product = "";
-      this.quantity = "";
-      this.product = "";
-      this.brand = "";
-    }
   },
   computed: {
     showModal() {
       return show.isTrue;
     },
-  },
-  data: function () {
-    return {
-      product: "",
-      quantity: "",
-      category: "",
-      brand: "",
-    };
   },
 }
 </script>
