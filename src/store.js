@@ -4,6 +4,7 @@ export const store = Vue.observable({
     price: Number(localStorage.getItem("price")),
     items: JSON.parse(localStorage.getItem("items")),
     count: Number(localStorage.getItem("count")),
+    stock: {},
 });
 export const show = Vue.observable({
         isTrue: false,
@@ -11,6 +12,12 @@ export const show = Vue.observable({
     }
 )
 export const mutations = {
+    editStock(content){
+        store.stock = content;
+    },
+    clearStock(){
+        store.stock = {};
+    },
     show() {
         show.isTrue = !show.isTrue;
     },
@@ -42,18 +49,18 @@ export const mutations = {
         }
         localStorage.setItem("items", JSON.stringify(store.items));
     },
-    removeCart(item) {
-        let i = this.indexOf(item);
+    removeCart(name) {
+        let i = this.indexOf(name);
         store.items.splice(i, 1);
         localStorage.setItem("items", JSON.stringify(store.items));
     },
-    increasePiece(item) {
-        let i = this.indexOf(item);
+    increasePiece(name) {
+        let i = this.indexOf(name);
         store.items[i].piece++;
         localStorage.setItem("items", JSON.stringify(store.items));
     },
-    decreasePiece(item) {
-        let i = this.indexOf(item);
+    decreasePiece(name) {
+        let i = this.indexOf(name);
         store.items[i].piece--;
         localStorage.setItem("items", JSON.stringify(store.items));
     },
@@ -67,7 +74,7 @@ export const mutations = {
     }
     ,
     indexOf(item) {
-        return store.items.findIndex(x => x.item.id === item);
+        return store.items.findIndex(x => x.item.name === item);
     },
     setStorage() {
         if (localStorage.getItem("items") === null) {
