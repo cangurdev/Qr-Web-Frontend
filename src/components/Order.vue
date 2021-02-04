@@ -52,7 +52,7 @@ export default {
         db.collection("Orders")
             .add({
               orderType: "Yeni Sipariş!",
-              tableNumber: "21",
+              tableNumber: this.$route.params.id,
               time: Date.now(),
               order: {
                 price: store.price,

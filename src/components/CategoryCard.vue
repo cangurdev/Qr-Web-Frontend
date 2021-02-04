@@ -1,7 +1,8 @@
 <template>
   <div class="w-32 h-32 m-4 card-image bg-center bg-cover rounded-md">
-    <p class="text-white font-medium text-2xl pt-24 font-bold shadow-lg">
-      Pizza
+    <img class="z-0 w-32 h-32 card-image bg-center rounded-md" :src="this.category[Object.keys(this.category)[0]].image" />
+    <p class="z-50 text-white font-medium text-2xl font-bold -m-8 shadow-lg">
+      {{ category.id }}
     </p>
   </div>
 </template>
@@ -10,14 +11,20 @@
 export default {
   name: "CategoryCard",
   props: {
-    name: String,
+    category: Object,
   },
+  data() {
+    return {
+      styleObject: {
+        backgroundImage: this.category[Object.keys(this.category)[0]].image,
+      }
+    };
+  }
 };
 </script>
 
 <style>
 .card-image {
-  background-image: url("https://im.haberturk.com/2020/02/05/ver1580901103/2573748_1200x627.jpg");
   text-shadow: 2px 2px black;
 }
 </style>

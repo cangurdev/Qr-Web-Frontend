@@ -1,9 +1,8 @@
 <template>
   <div>
-    <router-link to="/">
+    <router-link :to="'/menu/'+this.$route.params.id">
       <div
         class="div-color rounded-full h-12 w-12 p-3 absolute right-8 top-16"
-        @click="close()"
       >
         <icon-base viewBox="0 0 64 64" height="24" width="24"
           ><icon-close

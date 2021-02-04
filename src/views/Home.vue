@@ -3,9 +3,15 @@
     <Navbar page="menu"/>
     <Fab/>
     <SearchBar/>
-    <CategoryCard/>
-    <div v-for="item in items" v-bind:key="item.id">
-      <Card :item="item"/>
+    <div class="flex">
+      <div v-for="category in categories" v-bind:key="category.id">
+        <CategoryCard :category="category"/>
+      </div>
+    </div>
+    <div v-for="category in categories" v-bind:key="category.id">
+      <div v-for="item in category" v-bind:key="item.id">
+        <Card :item="item"/>
+      </div>
     </div>
   </div>
 </template>
@@ -32,14 +38,14 @@ export default {
   },
   data() {
     return {
-      items: [],
+      categories: [],
     };
   },
   mounted: function () {
     mutations.setStorage();
   },
   firestore: {
-    items: db.collection("hamburger"),
+    categories: db.collection("Menu"),
   },
 };
 </script>
