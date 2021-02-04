@@ -23,7 +23,7 @@
         </tbody>
       </table>
     </div>
-    <div class="flex-col ml-8 my-4">
+    <div class="flex-col ml-8 my-4 sticky top-0">
       <h2 class="text-2xl text-white">Sipariş Detayı</h2>
       <div>
         <div class="text-black p-4 my-4 w-96 bg-white rounded-md">Sipariş No</div>
@@ -69,7 +69,7 @@ export default {
   },
   methods: {
     selectOrder(item) {
-      if (item.orderType == "Yeni Sipariş!") {
+      if (item.orderType === "Yeni Sipariş!") {
         this.detail = item.order.itemList;
         this.price = item.order.price;
         this.item = item;

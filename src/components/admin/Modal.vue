@@ -86,6 +86,9 @@ export default {
     toggleModal: function () {
       mutations.show();
     },
+    toggleAddCategory() {
+      mutations.showAddCategory();
+    },
     addItem() {
       //adding image to storage
       const storageRef = firebase.storage().ref(`images/${this.name}`).put(this.image);
@@ -108,6 +111,8 @@ export default {
             ingredients: this.ingredients,
             name: this.name,
             price: this.price,
+            count: 0,
+            category: this.category,
           });
       this.clearFields();
       this.toggleModal();

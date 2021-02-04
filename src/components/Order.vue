@@ -47,8 +47,9 @@ export default {
     };
   },
   methods: {
-    order() {
+    async order() {
       if (this.price > 0) {
+        await this.increaseCount();
         db.collection("Orders")
             .add({
               orderType: "Yeni Sipariş!",
@@ -75,6 +76,17 @@ export default {
         this.clicked = false;
       }, 2000);
     },
+    async increaseCount() {
+      let list = store.items;
+      for (let i = 0; i < list.length; i++) {
+        const ref = db.collection("Menu").doc(list[i].item.category);
+        const doc = await ref.get();
+        let items = doc.data();
+        items[list[i].item.name].count += list[i].piece;
+
+        await db.collection("Menu").doc(list[i].item.category).set(items);
+      }
+    }
   },
 };
 </script>

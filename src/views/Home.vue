@@ -4,9 +4,11 @@
     <Fab/>
     <SearchBar/>
     <div class="flex">
-      <div v-for="category in categories" v-bind:key="category.id">
+      <button v-on:click="decreasePage" class="text-white text-3xl focus:outline-none">{{backSign}}</button>
+      <div v-for="category in arr" v-bind:key="category.id">
         <CategoryCard :category="category"/>
       </div>
+      <button v-on:click="increasePage" class="text-white text-3xl focus:outline-none">{{forwardSign}}</button>
     </div>
     <div v-for="category in categories" v-bind:key="category.id">
       <div v-for="item in category" v-bind:key="item.id">
@@ -39,6 +41,10 @@ export default {
   data() {
     return {
       categories: [],
+      pagination: 3,
+      categoriesBar: [],
+      backSign:"<",
+      forwardSign:">",
     };
   },
   mounted: function () {
@@ -47,6 +53,27 @@ export default {
   firestore: {
     categories: db.collection("Menu"),
   },
+  computed: {
+    arr() {
+      this.setCategoriesBar();
+      return this.categoriesBar.slice(this.pagination - 3, this.pagination);
+    }
+  },
+  methods: {
+    setCategoriesBar(){
+      this.categoriesBar = this.categories;
+    },
+    increasePage() {
+      if (this.pagination < this.categories.length) {
+        this.pagination += 3;
+      }
+    },
+    decreasePage() {
+      if (this.pagination > 3) {
+        this.pagination -= 3;
+      }
+    },
+  }
 };
 </script>
 

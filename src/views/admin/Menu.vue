@@ -18,7 +18,7 @@
       <tbody class="text-white w-64">
       <div v-for="category in categories" v-bind:key="category.id">
         <div v-for="item in category" v-bind:key="item.id">
-          <MenuList :item="item" :category="category"/>
+          <MenuList :item="item"/>
         </div>
       </div>
       </tbody>
