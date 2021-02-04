@@ -7,11 +7,15 @@ export const store = Vue.observable({
 });
 export const show = Vue.observable({
         isTrue: false,
+        addCategory: false,
     }
 )
 export const mutations = {
     show() {
         show.isTrue = !show.isTrue;
+    },
+    showAddCategory() {
+        show.addCategory = !show.addCategory;
     },
     increasePrice(price) {
         store.price += Number(price);

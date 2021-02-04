@@ -25,9 +25,16 @@
                      placeholder="Ürün ismi">
             </div>
             <div class="flex-col my-2">
-              <input v-model="category" type="text"
-                     class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-96 sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                     placeholder="Kategori">
+              <select v-model="category" type="text"
+                      class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-64 sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600">"
+                <option value="" disabled selected>Kategori</option>
+                <option v-for="category in categories" v-bind:value="category.id" v-bind:key="category.id">
+                  {{ category.id }}
+                </option>
+              </select>
+              <button class="bg-color ml-8 text-white text-xs rounded-lg p-2" v-on:click="toggleAddCategory">+ Yeni
+                Kategori
+              </button>
             </div>
             <div class="flex-col my-2">
               <input v-model="price" type="text"
@@ -55,16 +62,23 @@
       </div>
     </div>
     <div v-if="showModal" class="opacity-25 fixed inset-0 z-40 bg-black"></div>
+    <AddCategoryModal/>
   </div>
 </template>
 
 <script>
 import {mutations, show} from "../../store";
+
 import {db} from "../../db";
 import firebase from "firebase";
+import AddCategoryModal from "./AddCategoryModal";
 
 export default {
   name: "Modal",
+  components: {AddCategoryModal},
+  props: {
+    categories: Array
+  },
   methods: {
     file(event) {
       this.image = event.target.files[0];
@@ -96,6 +110,7 @@ export default {
             price: this.price,
           });
       this.clearFields();
+      this.toggleModal();
     },
     clearFields() {
       this.name = "";
@@ -108,7 +123,7 @@ export default {
   computed: {
     showModal() {
       return show.isTrue;
-    },
+    }
   },
   data: function () {
     return {
@@ -117,6 +132,7 @@ export default {
       price: 0,
       category: "",
       url: "",
+      categoryName: "",
     };
   },
 }

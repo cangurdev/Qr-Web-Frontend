@@ -19,7 +19,7 @@
       </div>
       </tbody>
     </table>
-    <AddStockModel/>
+    <AddStockModal/>
   </div>
 </template>
 
@@ -27,13 +27,13 @@
 import Sidebar from '../../components/admin/Sidebar.vue';
 import StockList from '../../components/admin/StockList.vue';
 import {db} from "../../db";
-import AddStockModel from "../../components/admin/AddStockModel";
+import AddStockModal from "../../components/admin/AddStockModal";
 import {mutations} from "../../store";
 
 export default {
   name: "Stock",
   components: {
-    AddStockModel,
+    AddStockModal,
     Sidebar,
     StockList,
   },

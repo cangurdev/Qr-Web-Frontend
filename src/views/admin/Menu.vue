@@ -23,7 +23,7 @@
       </div>
       </tbody>
     </table>
-    <Modal/>
+    <Modal :categories="categories"/>
   </div>
 </template>
 
