@@ -77,7 +77,7 @@ export default {
       this.categoriesBar = this.categories;
     },
     increasePage() {
-      if (this.pagination < this.categories.length - 2) {
+      if (this.pagination < this.categories.length) {
         this.pagination += 2;
       }
     },
