@@ -89,40 +89,31 @@ export default {
     toggleAddCategory() {
       mutations.showAddCategory();
     },
-    addItem() {
-      //adding image to storage
-      const storageRef = firebase.storage().ref(`images/${this.name}`).put(this.image);
-      storageRef.on(`state_changed`, snapshot => {
-            this.uploadValue = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          }, error => {
-            console.log(error.message)
-          },
-          () => {
-            this.uploadValue = 100;
-            storageRef.snapshot.ref.getDownloadURL().then((url) => {
-              this.url = url;
-            });
-          }
-      );
-      //adding item to firestore
-      db.collection("Menu").doc(this.category).update(
+    async addItem() {
+      //Adding image to storage
+      await firebase.storage().ref(`images/${this.name}`).put(this.image);
+
+      //Getting image url
+      const url = await firebase.storage().ref(`images/${this.name}`).getDownloadURL();
+
+      //Adding item to Firestore
+      await db.collection("Menu").doc(this.category).update(
           this.name, {
-            image: this.url,
+            image: url,
             ingredients: this.ingredients,
             name: this.name,
-            price: this.price,
+            price: parseInt(this.price),
             count: 0,
             category: this.category,
-          });
+          })
       this.clearFields();
       this.toggleModal();
     },
     clearFields() {
       this.name = "";
       this.ingredients = "";
-      this.price = 0;
+      this.price = "";
       this.category = "";
-      this.url = "";
     }
   },
   computed: {
@@ -134,9 +125,8 @@ export default {
     return {
       name: "",
       ingredients: "",
-      price: 0,
+      price: "",
       category: "",
-      url: "",
       categoryName: "",
     };
   },
