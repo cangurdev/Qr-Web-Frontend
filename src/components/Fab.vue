@@ -104,6 +104,7 @@ export default {
             orderType: "Garson Çağırıyor!",
             tableNumber: this.$route.params.id,
             time: Date.now(),
+            status: "Beklemede",
           })
           .then(() => (this.message = "Garson Çağrıldı"))
           .catch(() => {
@@ -121,6 +122,7 @@ export default {
             orderType: "Hesap (Nakit)!",
             tableNumber: this.$route.params.id,
             time: Date.now(),
+            status: "Beklemede",
           })
           .then(() => (this.message = "Hesap İstendi"))
           .catch(() => {
@@ -138,6 +140,7 @@ export default {
             orderType: "Hesap (Kart)!",
             tableNumber: this.$route.params.id,
             time: Date.now(),
+            status: "Beklemede",
           })
           .then(() => (this.message = "Hesap İstendi"))
           .catch(() => {

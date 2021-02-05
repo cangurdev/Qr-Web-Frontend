@@ -56,7 +56,7 @@ export default {
               tableNumber: this.$route.params.id,
               time: Date.now(),
               order: {
-                price: store.price,
+                price: parseInt(store.price),
                 count: store.count,
                 itemList: store.items,
               },

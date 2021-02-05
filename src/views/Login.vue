@@ -9,21 +9,21 @@
             <div class="text-gray-700 sm:text-lg sm:leading-7">
               <div class="flex flex-col">
                 <label class="leading-loose text-left">Email</label>
-                <input type="text"
+                <input type="text" v-model="email"
                        class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                        placeholder="Email">
               </div>
               <div class="flex flex-col my-4">
                 <label class="leading-loose text-left">Şifre</label>
-                <input type="text"
+                <input type="password" v-model="password"
                        class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
                        placeholder="Şifre">
               </div>
               <p class="text-right text-xs">Şifremi unuttum</p>
             </div>
             <div class="pt-4 flex items-center space-x-4 my-4">
-              <button
-                  class="bg-color flex justify-center items-center w-full text-white px-4 py-3 rounded-lg focus:outline-none">
+              <button v-on:click="submit"
+                      class="bg-color flex justify-center items-center w-full text-white px-4 py-3 rounded-lg focus:outline-none">
                 Giriş Yap
               </button>
             </div>
@@ -38,14 +38,31 @@
 </template>
 <script>
 import cafe from "../assets/cafe.png"
+import firebase from "firebase/app";
+import "firebase/auth";
 
 export default {
   name: "Login",
   data() {
     return {
-      image: cafe
+      image: cafe,
+      email: "",
+      password: "",
     };
   },
+  methods: {
+    submit() {
+      firebase
+          .auth()
+          .signInWithEmailAndPassword(this.email, this.password)
+          .then(() => {
+            this.$router.replace({name: "Admin"});
+          })
+          .catch(err => {
+            this.error = err.message;
+          });
+    }
+  }
 }
 </script>
 

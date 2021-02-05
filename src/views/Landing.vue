@@ -22,7 +22,9 @@
             Preview
           </button>
 
-          <a href="/admin" class="mx-2 focus:outline-none rounded-full py-2 px-4 adminButtonColor">Admin Preview</a>
+          <router-link target="_blank" :to="{ name: 'AdminHome'}"
+                       class="mx-2 focus:outline-none rounded-full py-2 px-4 adminButtonColor">Admin Preview
+          </router-link>
         </div>
       </div>
       <div class="z-20 absolute right-20 top-40">

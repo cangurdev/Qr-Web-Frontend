@@ -11,7 +11,7 @@
         /></div
       >
     </router-link>
-    <div class="text-center mx-3 w-full grid">
+    <div class="text-center mx-3 w-screen grid">
       <div>
         <p class="text-white h-6">{{ item.name }}</p>
       </div>
