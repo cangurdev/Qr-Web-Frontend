@@ -27,22 +27,40 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## User Screens
 
-![drink page screenshot](https://raw.githubusercontent.com/cvngur/Qr-Web-Frontend/master/images/drink.jpg)
+### Menu Screen
+<img src="https://raw.githubusercontent.com/cvngur/Qr-Web-Frontend/main/images/drink.jpg" height="400">
 
-![menu page screenshot](https://raw.githubusercontent.com/cvngur/Qr-Web-Frontend/master/images/menu.jpg)
+### Menu Screen With FAB
 
-![empty cart screenshot](https://raw.githubusercontent.com/cvngur/Qr-Web-Frontend/master/images/empty_card.jpg)
+<img src="https://raw.githubusercontent.com/cvngur/Qr-Web-Frontend/main/images/menu.jpg" height="400">
 
-![cart screenshot](https://raw.githubusercontent.com/cvngur/Qr-Web-Frontend/master/images/cart)
+### Empty Cart Screen
+
+<img src="https://raw.githubusercontent.com/cvngur/Qr-Web-Frontend/main/images/empty_cart.jpg" height="400">
+
+### Cart Screen
+
+<img src="https://raw.githubusercontent.com/cvngur/Qr-Web-Frontend/main/images/cart.jpg" height="400">
 
 ## Admin Screens
 
-![admin menu screenshot](https://raw.githubusercontent.com/cvngur/Qr-Web-Frontend/master/images/admin_menu.jpg)
+### Menu Screen
 
-![orders screenshot](https://raw.githubusercontent.com/cvngur/Qr-Web-Frontend/master/images/orders.jpg)
+<img src="https://raw.githubusercontent.com/cvngur/Qr-Web-Frontend/main/images/admin_menu.png" height="400">
 
-![staff screenshot](https://raw.githubusercontent.com/cvngur/Qr-Web-Frontend/master/images/staff.jpg)
+### Orders Screen
 
-![qr screenshot](https://raw.githubusercontent.com/cvngur/Qr-Web-Frontend/master/images/qr.jpg)
+<img src="https://raw.githubusercontent.com/cvngur/Qr-Web-Frontend/main/images/orders.png" height="400">
 
-![stock screenshot](https://raw.githubusercontent.com/cvngur/Qr-Web-Frontend/master/images/stock.jpg)
+### Staff Screen
+
+<img src="https://raw.githubusercontent.com/cvngur/Qr-Web-Frontend/main/images/staff.png" height="400">
+
+### Qr Generator Screen
+
+<img src="https://raw.githubusercontent.com/cvngur/Qr-Web-Frontend/main/images/qr.png" height="400">
+
+### Stock Screen
+
+<img src="https://raw.githubusercontent.com/cvngur/Qr-Web-Frontend/main/images/stock.png" height="400">
+
