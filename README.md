@@ -1,27 +1,18 @@
 # Qr Menu
 
-## Project setup
-```
-npm install
-```
+Or Menu is a system that provides convenience to cafes and customers.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Features:
+- QR code generating
+- Stock tracking
+- Creating online menu
+- Make an order, call waiter or check from a phone
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Tech Stack: 
+- Vue
+- Tailwind
+- Firebase 
 
 # Screens
 
@@ -64,3 +55,25 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 <img src="https://raw.githubusercontent.com/cvngur/Qr-Web-Frontend/main/images/stock.png" height="400">
 
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
